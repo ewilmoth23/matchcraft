@@ -1,0 +1,22 @@
+{
+  "_comment": [
+    "Gates for `make eval-gate`. Set from measured values, not aspiration.",
+    "Fairness and soundness are zero-tolerance: a single violation means the score moved",
+    "for a reason the product promises it never uses, or moved in a direction that",
+    "contradicts the documented model. Those are defects, not budget.",
+    "The accuracy floors sit a little below current measurements so ordinary variation in",
+    "corpus growth does not fail the build, while a real regression does. Raise them when",
+    "the corpus grows; never lower one without recording why in the changelog."
+  ],
+  "minimums": {
+    "requirement_extraction_f1": 0.9,
+    "requirement_extraction_recall": 0.9,
+    "priority_accuracy": 0.9,
+    "evidence_accuracy": 0.72,
+    "score_band_accuracy": 0.45
+  },
+  "maximums": {
+    "fairness_violations": 0,
+    "soundness_violations": 0
+  }
+}

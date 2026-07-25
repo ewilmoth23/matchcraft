@@ -1,0 +1,19 @@
+Analytics Engineer
+Company: Wrenfield Mutual
+Location: Remote
+
+Requirements
+• 3+ years building and maintaining data pipelines.
+• Advanced SQL is required.
+• Python is required for pipeline development.
+• Snowflake or a comparable cloud data warehouse is required.
+• Experience with Apache Spark or a similar distributed processing engine.
+
+Nice to have
+• dbt experience is a plus.
+• Kafka or another streaming platform is a plus.
+
+Responsibilities
+• Own the transformation layer that feeds finance and risk reporting.
+• Improve pipeline reliability and data quality monitoring.
+• Document lineage and definitions for downstream analysts.

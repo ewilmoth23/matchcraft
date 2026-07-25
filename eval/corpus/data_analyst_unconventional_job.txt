@@ -1,0 +1,21 @@
+Data Analyst
+Company: Quillon Health Collective
+Location: Remote
+
+Who you are
+You would rather be right on Thursday than fast on Tuesday.
+
+Must-haves
+• 3+ years working with analytics data in a regulated environment.
+• Fluent SQL, including window functions and query optimization.
+• Python for data cleaning and analysis, especially pandas.
+• Experience building dashboards in Tableau or Power BI.
+
+Things that will make you stand out
+• Snowflake or another cloud warehouse.
+• Writing about analysis for readers who are not analysts.
+
+How you'll spend your time
+• Answering clinical operations questions with data nobody has modeled yet.
+• Maintaining the definitions behind our core reporting metrics.
+• Partnering with program managers to size and evaluate pilots.

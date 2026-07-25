@@ -1,0 +1,20 @@
+Product Designer
+Company: Halyard Field Software
+Location: Remote (US)
+
+Requirements
+• 4+ years designing digital products end to end.
+• A portfolio showing research, interaction design, and shipped outcomes.
+• Experience running usability testing and synthesizing findings.
+• Fluency with Figma and component based design systems.
+• Ability to write clear interface copy.
+
+Preferred Qualifications
+• Experience designing for field or offline first use is preferred.
+• Familiarity with WCAG accessibility standards is preferred.
+• Prior work with front end engineers on HTML and CSS handoff is a plus.
+
+Responsibilities
+• Own discovery, concept, and delivery for two product areas.
+• Maintain and extend the shared design system.
+• Partner with research and engineering from problem framing to release.

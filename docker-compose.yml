@@ -1,0 +1,74 @@
+name: matchcraft
+
+services:
+  api:
+    build:
+      context: .
+      dockerfile: apps/api/Dockerfile
+    environment:
+      MATCHCRAFT_ENV: production
+      MATCHCRAFT_DATABASE_URL: sqlite:////data/matchcraft.db
+      MATCHCRAFT_DATA_DIR: /data
+      # The browser reaches the API through nginx on the same origin, so the SPA never
+      # makes a cross-origin request in this stack. Kept explicit for clarity.
+      MATCHCRAFT_CORS_ORIGINS: http://localhost:5173
+      MATCHCRAFT_MAX_UPLOAD_BYTES: ${MATCHCRAFT_MAX_UPLOAD_BYTES:-10485760}
+      MATCHCRAFT_PROVIDER: ${MATCHCRAFT_PROVIDER:-local_first}
+      # Deliberately NOT interpolated from MATCHCRAFT_OLLAMA_URL. The root .env is written
+      # for host development, where Ollama is on localhost — and inside a container
+      # localhost is the container itself, so copying .env.example silently pointed the
+      # API at nothing and AI features appeared permanently unavailable. Override the
+      # container's target with MATCHCRAFT_OLLAMA_URL_DOCKER.
+      MATCHCRAFT_OLLAMA_URL: ${MATCHCRAFT_OLLAMA_URL_DOCKER:-http://host.docker.internal:11434}
+      MATCHCRAFT_OPENAI_BASE_URL: ${MATCHCRAFT_OPENAI_BASE_URL:-https://api.openai.com/v1}
+      MATCHCRAFT_OPENAI_API_KEY: ${MATCHCRAFT_OPENAI_API_KEY:-}
+      MATCHCRAFT_MODEL: ${MATCHCRAFT_MODEL:-qwen3.5:9b}
+      MATCHCRAFT_REMOTE_MODEL: ${MATCHCRAFT_REMOTE_MODEL:-gpt-5.6-sol}
+      MATCHCRAFT_OPENAI_REASONING_EFFORT: ${MATCHCRAFT_OPENAI_REASONING_EFFORT:-low}
+      MATCHCRAFT_OLLAMA_CONTEXT_TOKENS: ${MATCHCRAFT_OLLAMA_CONTEXT_TOKENS:-32768}
+      MATCHCRAFT_MODEL_TEMPERATURE: ${MATCHCRAFT_MODEL_TEMPERATURE:-0}
+      MATCHCRAFT_MODEL_MAX_TOKENS: ${MATCHCRAFT_MODEL_MAX_TOKENS:-3000}
+      MATCHCRAFT_MODEL_TIMEOUT_SECONDS: ${MATCHCRAFT_MODEL_TIMEOUT_SECONDS:-180}
+      MATCHCRAFT_MODEL_RETRIES: ${MATCHCRAFT_MODEL_RETRIES:-1}
+      # Also fixed rather than interpolated. The names valid inside the compose network
+      # are not the names valid on the host, and a .env written for host development
+      # would silently narrow this list. Add a host with a compose override file.
+      MATCHCRAFT_ALLOWED_HOSTS: localhost,127.0.0.1,api,web
+      MATCHCRAFT_LOG_LEVEL: ${MATCHCRAFT_LOG_LEVEL:-INFO}
+    volumes:
+      - matchcraft_data:/data
+    # Loopback only: MatchCraft is a single-user local application with no
+    # authentication and must not be reachable from other hosts on the network.
+    ports:
+      - "127.0.0.1:8000:8000"
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+      args:
+        VITE_API_URL: /api/v1
+    depends_on:
+      api:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:5173:8080"
+    restart: unless-stopped
+
+  ollama:
+    # The only unpinned image, deliberately: this is an opt-in convenience profile for
+    # trying local AI without installing Ollama, and it is never part of the default
+    # stack. The application images are pinned by digest.
+    image: ollama/ollama:latest
+    profiles: ["local-ai"]
+    volumes:
+      - ollama_data:/root/.ollama
+    ports:
+      - "127.0.0.1:11434:11434"
+
+volumes:
+  matchcraft_data:
+  ollama_data:

@@ -1,0 +1,27 @@
+Jordan Rivera
+jordan.rivera@example.test | (555) 010-2048 | https://github.com/jordan-rivera
+
+PROFESSIONAL SUMMARY
+Software engineer focused on reliable data products and accessible web applications.
+
+TECHNICAL SKILLS
+Python, TypeScript, React, FastAPI, SQL, PostgreSQL, Docker, Git, AWS
+
+PROFESSIONAL EXPERIENCE
+Software Engineer | Northstar Data Cooperative | January 2022 - Present | Remote
+• Built Python and FastAPI services that processed 2 million records each week.
+• Reduced data-validation failures by 32% by adding typed contracts and automated tests.
+• Developed React and TypeScript workflows with product designers and operations staff.
+• Deployed containerized services with Docker and maintained CI/CD checks.
+
+Data Analyst | Civic Systems Lab | June 2019 - December 2021 | Philadelphia, PA
+• Automated SQL reporting used by 14 program managers, saving 8 hours each month.
+• Created data-quality dashboards and documented remediation procedures.
+
+PROJECTS
+Local Data Explorer
+• Built an open-source Python tool for reviewing public datasets without uploading private files.
+
+EDUCATION
+Bachelor of Science in Information Systems | State College | 2019
+

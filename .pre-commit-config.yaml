@@ -1,0 +1,17 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    # Must match the ruff pin in apps/api/constraints.lock, or a commit that passes
+    # the hook can still fail `ruff format --check` in CI.
+    rev: v0.15.22
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: detect-private-key
+

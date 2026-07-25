@@ -1,0 +1,26 @@
+name: Feature request
+description: Suggest a focused improvement within MatchCraft's product boundaries.
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: What user need would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence and responsible-AI impact
+      description: Explain effects on evidence tracing, scoring, privacy, and non-fabrication.
+    validations:
+      required: true
+

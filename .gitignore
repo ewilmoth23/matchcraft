@@ -1,0 +1,42 @@
+# macOS
+.DS_Store
+._*
+# Finder/iCloud duplicate artifacts: "file 2.py", ".coverage 3"
+*\ [0-9].*
+*\ [0-9][0-9].*
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage*
+coverage.xml
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Node
+node_modules/
+apps/web/.vite/
+npm-debug.log*
+
+# Test and build output
+playwright-report/
+test-results/
+apps/web/dist/
+
+# Local application data — never commit a résumé or a database
+matchcraft-data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite3

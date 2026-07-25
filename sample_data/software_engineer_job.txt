@@ -1,0 +1,21 @@
+Senior Software Engineer
+Company: Acme Public Systems
+Location: Remote
+
+Required Qualifications
+• 4+ years of software engineering experience.
+• Strong Python and SQL skills are required.
+• Experience building REST APIs with FastAPI or a similar framework.
+• Must have experience with React and TypeScript.
+• Docker and Git experience are required.
+
+Preferred Qualifications
+• AWS experience preferred.
+• Kubernetes is a nice to have.
+• PostgreSQL experience preferred.
+
+Responsibilities
+• Design reliable services that process high-volume data.
+• Collaborate with product, design, and operations partners.
+• Improve automated testing and delivery practices.
+

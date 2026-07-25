@@ -1,0 +1,20 @@
+Backend Software Engineer
+Company: Larkfield Civic Software
+Location: Remote (US)
+
+Required Qualifications
+• 3+ years of professional backend development experience.
+• Strong Python skills are required.
+• Experience designing and maintaining REST APIs.
+• PostgreSQL experience is required, including query tuning.
+• Docker and Git are required for daily work.
+
+Preferred Qualifications
+• AWS experience preferred.
+• Kubernetes exposure is a nice to have.
+• Redis caching experience is preferred.
+
+Responsibilities
+• Build and maintain services that process municipal permit data.
+• Improve automated testing and continuous delivery practices.
+• Collaborate with product managers on release planning.

@@ -1,0 +1,22 @@
+Nadia Ashgrove
+nadia.ashgrove@example.test | (555) 010-9265
+
+PROFESSIONAL SUMMARY
+Reporting analyst with four years supporting clinical operations under HIPAA privacy controls.
+
+TECHNICAL SKILLS
+SQL, Python, Excel, Snowflake
+
+PROFESSIONAL EXPERIENCE
+Operations Reporting Analyst | Ridgeway Care Network | February 2021 - Present | Remote
+• Wrote SQL window functions that cut a nightly patient-throughput query from 40 minutes to 4 minutes.
+• Built Excel reporting workbooks reviewed weekly by 35 clinic managers across 9 sites.
+• Wrote Python scripts that reconcile scheduling extracts before loading them into Snowflake.
+• Documented metric definitions so three teams reported the same census numbers.
+• Wrote plain-language analysis memos for clinical leaders without a statistics background.
+
+Reporting Associate | Halstead Regional Clinic | June 2018 - January 2021 | Akron, OH
+• Produced monthly regulatory reports reviewed by compliance staff.
+
+EDUCATION
+Bachelor of Science in Public Health | Glenmore University | 2018

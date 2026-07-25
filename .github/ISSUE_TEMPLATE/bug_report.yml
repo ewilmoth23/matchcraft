@@ -1,0 +1,36 @@
+name: Bug report
+description: Report a reproducible MatchCraft defect.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Please remove résumé text, contact details, API keys, and other private data before submitting.
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Include expected and actual behavior.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, browser, Python/Node version, and Docker or local setup.
+    validations:
+      required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy check
+      options:
+        - label: I removed private résumé, job-description, prompt, and secret data.
+          required: true
+

@@ -1,0 +1,29 @@
+Ines Bardot
+ines.bardot@example.test | (555) 010-7391 | https://example.test/ines-bardot
+
+WHAT I DO
+End to end product design: discovery research, interaction design, prototyping, design systems, usability testing, and interface writing.
+
+TOOLS
+Figma, FigJam, Maze, HTML, CSS
+
+HOW I WORK
+
+Research and synthesis
+• Ran 60 moderated usability sessions across three field products and turned the findings into a prioritized problem list.
+• Designed an offline first inspection flow after shadowing inspectors on 12 site visits.
+
+Systems and craft
+• Maintained a 90 component Figma design system adopted by four squads.
+• Rewrote onboarding interface copy and reduced setup support tickets by 34%.
+• Met WCAG 2.1 AA contrast and focus requirements on every shipped screen.
+
+Delivery
+• Paired with front end engineers on HTML and CSS handoff for two releases.
+• Shipped a rebuilt work order flow that raised task completion from 61% to 88%.
+
+WHERE
+Halcyon Grove Software, 2019 to now. Pinnacle Tide Studio, 2016 to 2019.
+
+SCHOOL
+Bachelor of Fine Arts in Graphic Design, Marlowe College, 2016

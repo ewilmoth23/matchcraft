@@ -1,0 +1,21 @@
+Tomas Villareal
+tomas.villareal@example.test | (555) 010-2277
+
+PROFESSIONAL SUMMARY
+Analytics engineer with five years owning transformation pipelines for financial reporting.
+
+TECHNICAL SKILLS
+SQL, Python, Snowflake, Apache Spark, dbt, Airflow, Git
+
+PROFESSIONAL EXPERIENCE
+Analytics Engineer | Ashgrove Mutual Holdings | April 2020 - Present | Remote
+• Rebuilt the finance transformation layer in dbt and SQL, cutting nightly runtime by 62%.
+• Reduced failed pipeline runs from 14 each week to 2 by adding data quality tests.
+• Migrated 40 Apache Spark jobs onto Snowflake and saved 8,000 dollars each month in compute.
+• Documented lineage for 120 models, which cut analyst clarification requests by 45%.
+
+Data Analyst | Brackenhill Credit Union | July 2017 - March 2020 | Toledo, OH
+• Automated Python reporting jobs that saved 20 hours each month for four teams.
+
+EDUCATION
+Bachelor of Science in Statistics | Northvale University | 2017

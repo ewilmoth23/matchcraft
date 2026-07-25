@@ -1,0 +1,22 @@
+Priya Raman
+priya.raman@example.test | (555) 010-3311 | https://example.test/priya-raman
+
+PROFESSIONAL SUMMARY
+Backend engineer with six years building Python services for public-sector data platforms.
+
+TECHNICAL SKILLS
+Python, SQL, PostgreSQL, Redis, Docker, Git, AWS, REST APIs, FastAPI
+
+PROFESSIONAL EXPERIENCE
+Backend Engineer | Larchmont Records Group | March 2021 - Present | Remote
+• Built Python and FastAPI services handling 40,000 permit records each month.
+• Reduced median REST API response time by 38% by tuning PostgreSQL indexes and queries.
+• Deployed containerized services with Docker and maintained continuous delivery pipelines.
+• Added Redis caching that cut repeated report generation by 6 hours each week.
+
+Software Developer | Fernwood Analytics Group | July 2019 - February 2021 | Columbus, OH
+• Developed SQL reporting jobs used by 22 analysts across three programs.
+• Collaborated with product managers on quarterly release planning and automated testing.
+
+EDUCATION
+Bachelor of Science in Computer Science | Riverbend State University | 2019

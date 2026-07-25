@@ -1,0 +1,21 @@
+Renata Silvano
+renata.silvano@example.test | (555) 010-5518
+
+PROFESSIONAL SUMMARY
+Analytics engineer responsible for transformation pipelines supporting financial reporting.
+
+TECHNICAL SKILLS
+SQL, Python, Snowflake, Apache Spark, dbt, Airflow, Git
+
+PROFESSIONAL EXPERIENCE
+Analytics Engineer | Ashgrove Mutual Holdings | April 2020 - Present | Remote
+• Responsible for the finance transformation layer written in dbt and SQL.
+• Duties included monitoring pipeline runs and investigating data quality issues.
+• Worked on Apache Spark jobs and Snowflake warehouse tables.
+• Ownership of model lineage documentation for downstream analysts.
+
+Data Analyst | Brackenhill Credit Union | July 2017 - March 2020 | Toledo, OH
+• Handling of recurring Python reporting jobs for four teams.
+
+EDUCATION
+Bachelor of Science in Statistics | Northvale University | 2017

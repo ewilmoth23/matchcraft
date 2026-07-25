@@ -1,0 +1,22 @@
+Devon Okafor
+devon.okafor@example.test | (555) 010-7742
+
+PROFESSIONAL SUMMARY
+Full stack developer with seven years shipping learning products for schools.
+
+TECHNICAL SKILLS
+JS, TypeScript, Node, Postgres, Playwright, WCAG 2.1, GitHub Actions
+
+PROFESSIONAL EXPERIENCE
+Senior Developer | Cedarbrook Study Tools | August 2019 - Present | Denver, CO
+• Shipped browser and server features in JS and TypeScript for 30,000 monthly learners.
+• Built Node services backed by Postgres and cut median query time by 45%.
+• Created GitHub Actions build and release pipelines that run on every merge.
+• Directed people management for four developers, including reviews and career plans.
+• Wrote Playwright browser suites covering the sign-in and grading flows.
+
+Web Developer | Pinehurst Media Cooperative | June 2016 - July 2019 | Denver, CO
+• Rebuilt the marketing site to meet WCAG 2.1 AA contrast and keyboard requirements.
+
+EDUCATION
+Bachelor of Arts in Media Studies | Two Rivers College | 2016

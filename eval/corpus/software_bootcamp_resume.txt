@@ -1,0 +1,26 @@
+Odalys Fontaine
+odalys.fontaine@example.test | (555) 010-9014
+
+PROFESSIONAL SUMMARY
+Junior developer with one year of professional Python experience following a career in retail management.
+
+TECHNICAL SKILLS
+Python, SQL, SQLite, Git, HTML, CSS
+
+PROFESSIONAL EXPERIENCE
+Junior Developer | Sable Creek Software | September 2024 - Present | Remote
+• Built Python scripts that import vendor catalog files into a SQLite database.
+• Fixed defects in an internal reporting tool and wrote SQL queries for support staff.
+• Reviewed pull requests in Git with two senior engineers.
+
+Store Manager | Ridgetop Outfitters | June 2018 - August 2024 | Boise, ID
+• Managed a team of 14 associates and a 2.1 million dollar annual sales plan.
+• Reduced inventory shrink by 22% through a weekly audit routine.
+
+PROJECTS
+Trail Conditions Tracker
+• Built a Python and Flask web application that stores trail reports in a SQLite database.
+
+EDUCATION
+Certificate in Software Development | Cascade Coding Institute | 2024
+Bachelor of Arts in Communication | Timberline College | 2018

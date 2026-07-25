@@ -1,0 +1,470 @@
+{
+  "_readme": [
+    "Labeled evaluation corpus for MatchCraft. Every document is synthetic and describes",
+    "no real person, employer, or contact detail; all e-mail addresses use the reserved",
+    ".test TLD and all employers, schools, and products are invented.",
+    "",
+    "Labels state what a competent human reviewer would say the job requires and what the",
+    "resume genuinely evidences. They are NOT predictions of the current parser's output.",
+    "Where a label and the implementation disagree, the label is the claim under test.",
+    "",
+    "'matches_any_of' exists only to absorb legitimate surface-form differences (the parser",
+    "surfaces catalog skills as bare canonical names such as 'PostgreSQL'). It never",
+    "changes the semantic claim of a label."
+  ],
+  "cases": [
+    {
+      "case_id": "software_backend_baseline",
+      "role_family": "software",
+      "resume": "software_backend_resume.txt",
+      "job": "software_backend_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: clean, conventional baseline - standard 'Required/Preferred Qualifications/Responsibilities' headings, chronological resume, vocabulary shared by both documents. BAND: strong because every required item and two of three preferred items are evidenced in contextual sentences, with only Kubernetes missing.",
+      "forbidden_requirements": [
+        "Required Qualifications",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Larkfield Civic Software",
+        "Location: Remote (US)"
+      ],
+      "expected_requirements": [
+        {"text": "3+ years of professional backend development experience", "priority": "required", "evidence": "supported"},
+        {"text": "Strong Python skills are required", "priority": "required", "evidence": "supported", "matches_any_of": ["Python"]},
+        {"text": "Experience designing and maintaining REST APIs", "priority": "required", "evidence": "supported", "matches_any_of": ["REST APIs"]},
+        {"text": "PostgreSQL experience is required, including query tuning", "priority": "required", "evidence": "supported", "matches_any_of": ["PostgreSQL"]},
+        {"text": "Docker is required for daily work", "priority": "required", "evidence": "supported", "matches_any_of": ["Docker"]},
+        {"text": "Git is required for daily work", "priority": "required", "evidence": "supported", "matches_any_of": ["Git"]},
+        {"text": "AWS experience preferred", "priority": "preferred", "evidence": "supported", "matches_any_of": ["AWS"]},
+        {"text": "Kubernetes exposure is a nice to have", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["Kubernetes"]},
+        {"text": "Redis caching experience is preferred", "priority": "preferred", "evidence": "supported", "matches_any_of": ["Redis"]},
+        {"text": "Build and maintain services that process municipal permit data", "priority": "context", "evidence": "supported"},
+        {"text": "Improve automated testing and continuous delivery practices", "priority": "context", "evidence": "supported"},
+        {"text": "Collaborate with product managers on release planning", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "software_backend_underqualified",
+      "role_family": "software",
+      "resume": "software_bootcamp_resume.txt",
+      "job": "software_backend_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: same job as software_backend_baseline with a junior career-changer, isolating how much the score moves on evidence depth alone; also exercises adjacent-technology reasoning (SQLite for PostgreSQL, Flask for REST APIs). BAND: partial because the language, SQL, and version-control requirements are genuinely met while the experience threshold, containerization, and cloud requirements are not.",
+      "forbidden_requirements": [
+        "Required Qualifications",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Larkfield Civic Software",
+        "Location: Remote (US)"
+      ],
+      "expected_requirements": [
+        {"text": "3+ years of professional backend development experience", "priority": "required", "evidence": "transferable"},
+        {"text": "Strong Python skills are required", "priority": "required", "evidence": "supported", "matches_any_of": ["Python"]},
+        {"text": "Experience designing and maintaining REST APIs", "priority": "required", "evidence": "transferable", "matches_any_of": ["REST APIs"]},
+        {"text": "PostgreSQL experience is required, including query tuning", "priority": "required", "evidence": "transferable", "matches_any_of": ["PostgreSQL"]},
+        {"text": "Docker is required for daily work", "priority": "required", "evidence": "not_found", "matches_any_of": ["Docker"]},
+        {"text": "Git is required for daily work", "priority": "required", "evidence": "supported", "matches_any_of": ["Git"]},
+        {"text": "AWS experience preferred", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["AWS"]},
+        {"text": "Kubernetes exposure is a nice to have", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["Kubernetes"]},
+        {"text": "Redis caching experience is preferred", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["Redis"]},
+        {"text": "Build and maintain services that process municipal permit data", "priority": "context", "evidence": "not_found"},
+        {"text": "Improve automated testing and continuous delivery practices", "priority": "context", "evidence": "not_found"},
+        {"text": "Collaborate with product managers on release planning", "priority": "context", "evidence": "not_found"}
+      ]
+    },
+    {
+      "case_id": "software_fullstack_vocabulary",
+      "role_family": "software",
+      "resume": "software_fullstack_resume.txt",
+      "job": "software_fullstack_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: the resume names the same skills differently from the job - 'JS' for JavaScript, 'Postgres' for PostgreSQL, 'Node' for Node.js, 'GitHub Actions' for continuous integration, and 'people management' for team leadership. BAND: strong because every required and preferred item is genuinely evidenced in a concrete sentence; only the wording differs.",
+      "forbidden_requirements": [
+        "Required Qualifications",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Beacon Ridge Learning",
+        "Location: Hybrid - Denver, CO"
+      ],
+      "expected_requirements": [
+        {"text": "4+ years of full stack web development experience", "priority": "required", "evidence": "supported"},
+        {"text": "Strong JavaScript skills are required", "priority": "required", "evidence": "supported", "matches_any_of": ["JavaScript"]},
+        {"text": "Strong TypeScript skills are required", "priority": "required", "evidence": "supported", "matches_any_of": ["TypeScript"]},
+        {"text": "Experience building services with Node.js", "priority": "required", "evidence": "supported", "matches_any_of": ["Node.js"]},
+        {"text": "PostgreSQL experience is required", "priority": "required", "evidence": "supported", "matches_any_of": ["PostgreSQL"]},
+        {"text": "Experience with continuous integration pipelines is required", "priority": "required", "evidence": "supported", "matches_any_of": ["CI/CD"]},
+        {"text": "Demonstrated team leadership is required", "priority": "required", "evidence": "supported", "matches_any_of": ["Leadership"]},
+        {"text": "Experience with automated browser testing is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Familiarity with accessibility standards is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Ship features across the browser client and the API layer", "priority": "context", "evidence": "supported"},
+        {"text": "Review code and set engineering standards for a small group of developers", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "data_analyst_unconventional_headings",
+      "role_family": "data",
+      "resume": "data_analyst_resume.txt",
+      "job": "data_analyst_unconventional_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: unconventional job headings - 'Who you are', 'Must-haves', 'Things that will make you stand out', 'How you'll spend your time' - two of which are not recognizable heading vocabulary at all. BAND: partial because two of four must-haves are directly evidenced while the BI-tool and pandas requirements are only adjacent (Excel workbooks, plain Python scripts).",
+      "forbidden_requirements": [
+        "Who you are",
+        "Must-haves",
+        "Things that will make you stand out",
+        "How you'll spend your time",
+        "Company: Quillon Health Collective"
+      ],
+      "expected_requirements": [
+        {"text": "3+ years working with analytics data in a regulated environment", "priority": "required", "evidence": "supported"},
+        {"text": "Fluent SQL, including window functions and query optimization", "priority": "required", "evidence": "supported", "matches_any_of": ["SQL"]},
+        {"text": "Python for data cleaning and analysis", "priority": "required", "evidence": "supported", "matches_any_of": ["Python"]},
+        {"text": "pandas for data cleaning and analysis", "priority": "required", "evidence": "transferable", "matches_any_of": ["Pandas"]},
+        {"text": "Experience building dashboards in Tableau or Power BI", "priority": "required", "evidence": "transferable", "matches_any_of": ["Tableau"]},
+        {"text": "Snowflake or another cloud warehouse", "priority": "preferred", "evidence": "supported", "matches_any_of": ["Snowflake"]},
+        {"text": "Writing about analysis for readers who are not analysts", "priority": "preferred", "evidence": "supported"},
+        {"text": "Answering clinical operations questions with data nobody has modeled yet", "priority": "context", "evidence": "supported"},
+        {"text": "Maintaining the definitions behind our core reporting metrics", "priority": "context", "evidence": "supported"},
+        {"text": "Partnering with program managers to size and evaluate pilots", "priority": "context", "evidence": "not_found"}
+      ]
+    },
+    {
+      "case_id": "data_pipeline_outcomes",
+      "role_family": "data",
+      "resume": "data_pipeline_outcomes_resume.txt",
+      "job": "data_pipeline_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: the outcomes half of a matched pair with data_pipeline_duties - identical skills and responsibilities, but every bullet carries an action verb and a measured result. BAND: strong because all five required items are evidenced in concrete accomplishment sentences and one of two nice-to-haves is met.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Nice to have",
+        "Responsibilities",
+        "Company: Wrenfield Mutual"
+      ],
+      "expected_requirements": [
+        {"text": "3+ years building and maintaining data pipelines", "priority": "required", "evidence": "supported"},
+        {"text": "Advanced SQL is required", "priority": "required", "evidence": "supported", "matches_any_of": ["SQL"]},
+        {"text": "Python is required for pipeline development", "priority": "required", "evidence": "supported", "matches_any_of": ["Python"]},
+        {"text": "Snowflake or a comparable cloud data warehouse is required", "priority": "required", "evidence": "supported", "matches_any_of": ["Snowflake"]},
+        {"text": "Experience with Apache Spark or a similar distributed processing engine", "priority": "required", "evidence": "supported", "matches_any_of": ["Apache Spark"]},
+        {"text": "dbt experience is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Kafka or another streaming platform is a plus", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["Kafka"]},
+        {"text": "Own the transformation layer that feeds finance and risk reporting", "priority": "context", "evidence": "supported"},
+        {"text": "Improve pipeline reliability and data quality monitoring", "priority": "context", "evidence": "supported"},
+        {"text": "Document lineage and definitions for downstream analysts", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "data_pipeline_duties",
+      "role_family": "data",
+      "resume": "data_pipeline_duties_resume.txt",
+      "job": "data_pipeline_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: the duties-only half of a matched pair with data_pipeline_outcomes - the evidence labels are deliberately IDENTICAL because the same work is described, but no bullet is action-led or measured. BAND: partial because the resume evidences the same requirement coverage with materially weaker demonstrated outcomes; the gap between this and data_pipeline_outcomes isolates how much narrative style alone moves the score.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Nice to have",
+        "Responsibilities",
+        "Company: Wrenfield Mutual"
+      ],
+      "expected_requirements": [
+        {"text": "3+ years building and maintaining data pipelines", "priority": "required", "evidence": "supported"},
+        {"text": "Advanced SQL is required", "priority": "required", "evidence": "supported", "matches_any_of": ["SQL"]},
+        {"text": "Python is required for pipeline development", "priority": "required", "evidence": "supported", "matches_any_of": ["Python"]},
+        {"text": "Snowflake or a comparable cloud data warehouse is required", "priority": "required", "evidence": "supported", "matches_any_of": ["Snowflake"]},
+        {"text": "Experience with Apache Spark or a similar distributed processing engine", "priority": "required", "evidence": "supported", "matches_any_of": ["Apache Spark"]},
+        {"text": "dbt experience is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Kafka or another streaming platform is a plus", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["Kafka"]},
+        {"text": "Own the transformation layer that feeds finance and risk reporting", "priority": "context", "evidence": "supported"},
+        {"text": "Improve pipeline reliability and data quality monitoring", "priority": "context", "evidence": "supported"},
+        {"text": "Document lineage and definitions for downstream analysts", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "operations_warehouse_prose",
+      "role_family": "operations",
+      "resume": "operations_warehouse_resume.txt",
+      "job": "operations_warehouse_prose_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: the job description has NO headings and NO bullets - four prose paragraphs that mix required, preferred, and day-to-day content in the same sentence run; the role is also entirely outside the technology skill catalog. BAND: strong because every required item including the forklift certification and cold-environment condition is directly evidenced, with only Six Sigma missing.",
+      "forbidden_requirements": [
+        "Warehouse Operations Supervisor at Kestrel Provisions Company",
+        "Kestrel Provisions moves refrigerated food to 140 independent grocers across three states"
+      ],
+      "expected_requirements": [
+        {"text": "at least four years of warehouse or distribution experience", "priority": "required", "evidence": "supported"},
+        {"text": "at least two years supervising an hourly team", "priority": "required", "evidence": "supported"},
+        {"text": "A current forklift certification must be in hand before your first shift", "priority": "required", "evidence": "supported"},
+        {"text": "comfortable working a full shift in a 34 degree environment", "priority": "required", "evidence": "supported"},
+        {"text": "Familiarity with a warehouse management system is expected", "priority": "required", "evidence": "supported"},
+        {"text": "You should be able to pull throughput and accuracy reports from it without help from an analyst", "priority": "required", "evidence": "supported"},
+        {"text": "Experience with OSHA recordkeeping and safety audits is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "exposure to continuous improvement methods such as Six Sigma", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Bilingual English and Spanish is a plus on this shift", "priority": "preferred", "evidence": "supported"},
+        {"text": "run a floor of 22 associates", "priority": "context", "evidence": "supported"},
+        {"text": "set the pick and load sequence for roughly 40 outbound trailers", "priority": "context", "evidence": "supported"},
+        {"text": "hold the line on cold chain temperature compliance from receiving through dispatch", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "operations_dispatch_boilerplate",
+      "role_family": "operations",
+      "resume": "operations_dispatch_resume.txt",
+      "job": "operations_dispatch_boilerplate_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: heavy non-requirement boilerplate - About Us, Our Mission, Benefits and Perks, an EEO statement, and How to Apply - several lines of which contain requirement-shaped vocabulary ('must', 'bonus') or catalog skill names inside benefits copy. BAND: partial because the candidate meets the exception-handling, communication, documentation, and all preferred items but falls short on the tenure threshold and has no routing or fleet platform experience.",
+      "forbidden_requirements": [
+        "About Us",
+        "Our Mission",
+        "Benefits and Perks",
+        "Equal Opportunity Employer",
+        "How to Apply",
+        "Foxglove Medical Supply delivers durable medical equipment to 300 clinics and 4,000 home patients across Arkansas.",
+        "We believe nobody should wait on the equipment that keeps them independent.",
+        "We must all do our part to keep our neighbors healthy and supplied.",
+        "Medical, dental, and vision coverage starting on day one.",
+        "A retirement plan with a 5% company match after 90 days.",
+        "Bonus eligibility after your first full quarter.",
+        "An annual learning stipend you can spend on anything from Excel classes to leadership coaching.",
+        "Foxglove Medical Supply is an equal opportunity employer.",
+        "We do not discriminate on the basis of race, color, religion, sex, sexual orientation, gender identity, national origin, age, disability, veteran status, or genetic information.",
+        "Applications must be submitted through our careers page.",
+        "Please include a short note about why this role interests you."
+      ],
+      "expected_requirements": [
+        {"text": "3+ years of dispatch, routing, or field service coordination experience", "priority": "required", "evidence": "transferable"},
+        {"text": "Proven ability to manage a same-day exception queue under time pressure", "priority": "required", "evidence": "supported"},
+        {"text": "Strong written and verbal communication with drivers, clinicians, and patients", "priority": "required", "evidence": "supported", "matches_any_of": ["Communication"]},
+        {"text": "Experience with a routing or fleet management platform is required", "priority": "required", "evidence": "not_found"},
+        {"text": "Accurate recordkeeping for controlled deliveries and proof of delivery", "priority": "required", "evidence": "supported"},
+        {"text": "Experience in healthcare, pharmacy, or medical device logistics is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Salesforce experience is preferred", "priority": "preferred", "evidence": "supported", "matches_any_of": ["Salesforce"]},
+        {"text": "Bilingual English and Spanish is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Build and adjust daily routes for 18 drivers across four service territories", "priority": "context", "evidence": "supported"},
+        {"text": "Resolve delivery exceptions and communicate revised windows to clinics", "priority": "context", "evidence": "supported"},
+        {"text": "Keep delivery documentation audit ready", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "project_coordinator_overqualified",
+      "role_family": "project_management",
+      "resume": "program_manager_resume.txt",
+      "job": "project_coordinator_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: an over-qualified candidate - a twelve-year program manager applying to a two-year coordinator role - which must still band strong, and which tests whether 'written communication' is recognized when the resume demonstrates it without ever using the word. BAND: strong because every required and preferred item is evidenced well beyond the stated threshold.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Ambleside Regional Utilities",
+        "Location: Hybrid - Duluth, MN"
+      ],
+      "expected_requirements": [
+        {"text": "2+ years of project coordination or administrative support experience", "priority": "required", "evidence": "supported"},
+        {"text": "Experience maintaining project schedules and status reporting", "priority": "required", "evidence": "supported"},
+        {"text": "Jira or a comparable work tracking tool is required", "priority": "required", "evidence": "supported", "matches_any_of": ["Jira"]},
+        {"text": "Strong written communication with internal stakeholders", "priority": "required", "evidence": "supported", "matches_any_of": ["Communication"]},
+        {"text": "Proficiency with Excel for tracking budgets and timelines", "priority": "required", "evidence": "supported", "matches_any_of": ["Excel"]},
+        {"text": "Exposure to Agile ceremonies is preferred", "priority": "preferred", "evidence": "supported", "matches_any_of": ["Agile"]},
+        {"text": "Familiarity with vendor invoicing is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Maintain schedules, action logs, and meeting notes for three infrastructure projects", "priority": "context", "evidence": "supported"},
+        {"text": "Track budget actuals against forecast and flag variances", "priority": "context", "evidence": "supported"},
+        {"text": "Coordinate meetings across engineering, finance, and field crews", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "product_designer_functional_resume",
+      "role_family": "design",
+      "resume": "product_designer_functional_resume.txt",
+      "job": "product_designer_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: a functional, skills-first resume with no recognizable section headings ('WHAT I DO', 'TOOLS', 'HOW I WORK', 'WHERE', 'SCHOOL'), evidence grouped by competency instead of employer, and no conventional date ranges. BAND: strong because every required item and two of three preferred items are evidenced with concrete outcomes; only the presentation is unconventional.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Halyard Field Software",
+        "Location: Remote (US)"
+      ],
+      "expected_requirements": [
+        {"text": "4+ years designing digital products end to end", "priority": "required", "evidence": "supported"},
+        {"text": "A portfolio showing research, interaction design, and shipped outcomes", "priority": "required", "evidence": "supported"},
+        {"text": "Experience running usability testing and synthesizing findings", "priority": "required", "evidence": "supported"},
+        {"text": "Fluency with Figma and component based design systems", "priority": "required", "evidence": "supported"},
+        {"text": "Ability to write clear interface copy", "priority": "required", "evidence": "supported"},
+        {"text": "Experience designing for field or offline first use is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Familiarity with WCAG accessibility standards is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Prior work with front end engineers on HTML and CSS handoff is a plus", "priority": "preferred", "evidence": "supported", "matches_any_of": ["HTML", "CSS"]},
+        {"text": "Own discovery, concept, and delivery for two product areas", "priority": "context", "evidence": "supported"},
+        {"text": "Maintain and extend the shared design system", "priority": "context", "evidence": "supported"},
+        {"text": "Partner with research and engineering from problem framing to release", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "product_designer_poor_match",
+      "role_family": "design",
+      "resume": "accounts_receivable_resume.txt",
+      "job": "product_designer_job.txt",
+      "expected_band": "weak",
+      "notes": "CHALLENGE: a genuinely poor match - a well-written, metric-rich accounts receivable resume against a product design role, testing whether resume quality can substitute for relevance. BAND: weak because not one required or preferred item has any supporting or adjacent evidence.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Halyard Field Software",
+        "Location: Remote (US)"
+      ],
+      "expected_requirements": [
+        {"text": "4+ years designing digital products end to end", "priority": "required", "evidence": "not_found"},
+        {"text": "A portfolio showing research, interaction design, and shipped outcomes", "priority": "required", "evidence": "not_found"},
+        {"text": "Experience running usability testing and synthesizing findings", "priority": "required", "evidence": "not_found"},
+        {"text": "Fluency with Figma and component based design systems", "priority": "required", "evidence": "not_found"},
+        {"text": "Ability to write clear interface copy", "priority": "required", "evidence": "not_found"},
+        {"text": "Experience designing for field or offline first use is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Familiarity with WCAG accessibility standards is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Prior work with front end engineers on HTML and CSS handoff is a plus", "priority": "preferred", "evidence": "not_found", "matches_any_of": ["HTML", "CSS"]},
+        {"text": "Own discovery, concept, and delivery for two product areas", "priority": "context", "evidence": "not_found"},
+        {"text": "Maintain and extend the shared design system", "priority": "context", "evidence": "not_found"},
+        {"text": "Partner with research and engineering from problem framing to release", "priority": "context", "evidence": "not_found"}
+      ]
+    },
+    {
+      "case_id": "medical_office_career_changer",
+      "role_family": "healthcare_admin",
+      "resume": "hotel_front_office_resume.txt",
+      "job": "medical_office_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: a career changer whose hotel front-office experience is genuinely transferable but never identical - guest scheduling for patient scheduling, folio disputes for billing questions, cardholder data rules for HIPAA - so most labels are 'transferable' rather than supported or missing. BAND: partial because four of five required items are adjacent rather than demonstrated and the electronic health record requirement has no evidence at all.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Thistlewood Family Health",
+        "Location: On-site - Boise, ID"
+      ],
+      "expected_requirements": [
+        {"text": "2+ years in a front office or patient facing coordination role", "priority": "required", "evidence": "transferable"},
+        {"text": "Experience scheduling appointments for multiple providers", "priority": "required", "evidence": "transferable"},
+        {"text": "Comfort handling insurance verification and patient billing questions", "priority": "required", "evidence": "transferable"},
+        {"text": "Familiarity with an electronic health record system is required", "priority": "required", "evidence": "not_found"},
+        {"text": "Working knowledge of HIPAA privacy obligations", "priority": "required", "evidence": "transferable"},
+        {"text": "Medical terminology coursework or certification is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Experience with prior authorization workflows is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Bilingual English and Spanish is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Check patients in and out and keep the daily schedule accurate", "priority": "context", "evidence": "transferable"},
+        {"text": "Verify coverage before visits and resolve claim rejections with billing", "priority": "context", "evidence": "transferable"},
+        {"text": "Protect patient information in every interaction", "priority": "context", "evidence": "transferable"}
+      ]
+    },
+    {
+      "case_id": "medical_office_direct_match",
+      "role_family": "healthcare_admin",
+      "resume": "medical_office_resume.txt",
+      "job": "medical_office_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: the direct-match control for medical_office_career_changer - same job, an experienced in-domain candidate, and a vocabulary the technology skill catalog does not cover at all. BAND: strong because every required and preferred item is evidenced in a concrete sentence.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Thistlewood Family Health",
+        "Location: On-site - Boise, ID"
+      ],
+      "expected_requirements": [
+        {"text": "2+ years in a front office or patient facing coordination role", "priority": "required", "evidence": "supported"},
+        {"text": "Experience scheduling appointments for multiple providers", "priority": "required", "evidence": "supported"},
+        {"text": "Comfort handling insurance verification and patient billing questions", "priority": "required", "evidence": "supported"},
+        {"text": "Familiarity with an electronic health record system is required", "priority": "required", "evidence": "supported"},
+        {"text": "Working knowledge of HIPAA privacy obligations", "priority": "required", "evidence": "supported"},
+        {"text": "Medical terminology coursework or certification is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Experience with prior authorization workflows is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Bilingual English and Spanish is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Check patients in and out and keep the daily schedule accurate", "priority": "context", "evidence": "supported"},
+        {"text": "Verify coverage before visits and resolve claim rejections with billing", "priority": "context", "evidence": "supported"},
+        {"text": "Protect patient information in every interaction", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "hvac_technician_direct_match",
+      "role_family": "skilled_trades",
+      "resume": "hvac_technician_resume.txt",
+      "job": "hvac_technician_job.txt",
+      "expected_band": "strong",
+      "notes": "CHALLENGE: a conventional, well-structured skilled-trades pairing in which not one of the 64 catalog skills appears, so the whole judgment rests on non-catalog requirement matching and on certifications rather than software. BAND: strong because every required item including the EPA 608 certification and driver license is evidenced, as are all three preferred items.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Ironwood Mechanical Services",
+        "Location: On-site - Springfield, MO"
+      ],
+      "expected_requirements": [
+        {"text": "4+ years of commercial HVAC service and repair experience", "priority": "required", "evidence": "supported"},
+        {"text": "EPA Section 608 Universal certification is required", "priority": "required", "evidence": "supported"},
+        {"text": "Experience troubleshooting rooftop units, chillers, and VAV boxes", "priority": "required", "evidence": "supported"},
+        {"text": "Ability to read and interpret mechanical and electrical schematics", "priority": "required", "evidence": "supported"},
+        {"text": "A valid driver license with a clean record is required", "priority": "required", "evidence": "supported"},
+        {"text": "Building automation system experience is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Boiler or hydronic heating experience is preferred", "priority": "preferred", "evidence": "supported"},
+        {"text": "Commercial refrigeration certification is a plus", "priority": "preferred", "evidence": "supported"},
+        {"text": "Diagnose and repair commercial heating and cooling systems on service calls", "priority": "context", "evidence": "supported"},
+        {"text": "Complete preventive maintenance on a scheduled route of 40 accounts", "priority": "context", "evidence": "supported"},
+        {"text": "Document findings, parts, and labor for each work order", "priority": "context", "evidence": "supported"}
+      ]
+    },
+    {
+      "case_id": "hvac_technician_poor_match",
+      "role_family": "skilled_trades",
+      "resume": "executive_assistant_resume.txt",
+      "job": "hvac_technician_job.txt",
+      "expected_band": "weak",
+      "notes": "CHALLENGE: a second genuinely poor match, deliberately paired with hvac_technician_direct_match on the same job - an office administrator with zero trade evidence, in a role family where no catalog skill can be detected on either side. BAND: weak because no required or preferred item has any supporting or adjacent evidence; if this scores anywhere near the direct match, the score is measuring resume tidiness rather than alignment.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Ironwood Mechanical Services",
+        "Location: On-site - Springfield, MO"
+      ],
+      "expected_requirements": [
+        {"text": "4+ years of commercial HVAC service and repair experience", "priority": "required", "evidence": "not_found"},
+        {"text": "EPA Section 608 Universal certification is required", "priority": "required", "evidence": "not_found"},
+        {"text": "Experience troubleshooting rooftop units, chillers, and VAV boxes", "priority": "required", "evidence": "not_found"},
+        {"text": "Ability to read and interpret mechanical and electrical schematics", "priority": "required", "evidence": "not_found"},
+        {"text": "A valid driver license with a clean record is required", "priority": "required", "evidence": "not_found"},
+        {"text": "Building automation system experience is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Boiler or hydronic heating experience is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Commercial refrigeration certification is a plus", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Diagnose and repair commercial heating and cooling systems on service calls", "priority": "context", "evidence": "not_found"},
+        {"text": "Complete preventive maintenance on a scheduled route of 40 accounts", "priority": "context", "evidence": "not_found"},
+        {"text": "Document findings, parts, and labor for each work order", "priority": "context", "evidence": "not_found"}
+      ]
+    },
+    {
+      "case_id": "instructional_coach_transferable",
+      "role_family": "education",
+      "resume": "math_teacher_resume.txt",
+      "job": "instructional_coach_job.txt",
+      "expected_band": "partial",
+      "notes": "CHALLENGE: an in-field candidate making a lateral move - strong on licensure, tenure, and assessment data, but the coaching, professional-development, and curriculum-adoption requirements are only adjacent, so the transferable label carries the case. BAND: partial because three of five required items are demonstrated, two are adjacent only, and no preferred item is fully met.",
+      "forbidden_requirements": [
+        "Requirements",
+        "Preferred Qualifications",
+        "Responsibilities",
+        "Company: Cedar Hollow Unified School District",
+        "Location: On-site - Cedar Hollow, NM"
+      ],
+      "expected_requirements": [
+        {"text": "A valid state teaching license in secondary mathematics is required", "priority": "required", "evidence": "supported"},
+        {"text": "5+ years of classroom teaching experience", "priority": "required", "evidence": "supported"},
+        {"text": "Experience coaching or mentoring other teachers", "priority": "required", "evidence": "transferable"},
+        {"text": "Ability to analyze student assessment data and plan interventions", "priority": "required", "evidence": "supported"},
+        {"text": "Experience leading professional development sessions is required", "priority": "required", "evidence": "transferable"},
+        {"text": "A master degree in education or curriculum is preferred", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Experience with standards based curriculum adoption is preferred", "priority": "preferred", "evidence": "transferable"},
+        {"text": "Bilingual English and Spanish is a plus", "priority": "preferred", "evidence": "not_found"},
+        {"text": "Observe classrooms and provide non-evaluative coaching feedback", "priority": "context", "evidence": "not_found"},
+        {"text": "Facilitate department data meetings each grading period", "priority": "context", "evidence": "transferable"},
+        {"text": "Support new teachers through their first two years", "priority": "context", "evidence": "not_found"}
+      ]
+    }
+  ]
+}

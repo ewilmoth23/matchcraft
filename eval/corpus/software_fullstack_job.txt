@@ -1,0 +1,19 @@
+Full Stack Engineer
+Company: Beacon Ridge Learning
+Location: Hybrid - Denver, CO
+
+Required Qualifications
+• 4+ years of full stack web development experience.
+• Strong JavaScript and TypeScript skills are required.
+• Experience building services with Node.js.
+• PostgreSQL experience is required.
+• Experience with continuous integration pipelines is required.
+• Demonstrated team leadership is required.
+
+Preferred Qualifications
+• Experience with automated browser testing is preferred.
+• Familiarity with accessibility standards is preferred.
+
+Responsibilities
+• Ship features across the browser client and the API layer.
+• Review code and set engineering standards for a small group of developers.

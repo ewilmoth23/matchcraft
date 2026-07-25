@@ -1,0 +1,39 @@
+{
+  "overall_score": 78.0,
+  "category_scores": {
+    "Required skill alignment": 21.1,
+    "Responsibility alignment": 20.0,
+    "Experience evidence quality": 11.9,
+    "Measurable accomplishment quality": 3.3,
+    "Preferred skill alignment": 5.0,
+    "Résumé clarity and structure": 10.0,
+    "Keyword and terminology alignment": 2.8,
+    "Education and certification alignment": 0.0
+  },
+  "supported_skills": [
+    "AWS",
+    "Docker",
+    "FastAPI",
+    "Git",
+    "PostgreSQL",
+    "Python",
+    "React",
+    "SQL",
+    "TypeScript"
+  ],
+  "unsupported_skills": [
+    "Kubernetes",
+    "REST APIs"
+  ],
+  "notes": "Synthetic deterministic regression fixture. No model output is included. Regenerated after the evaluation harness recalibrated non-catalog matching and removed presentation heuristics from scoring; Education is excluded because this job states no education requirement.",
+  "category_maximums": {
+    "Required skill alignment": 25,
+    "Responsibility alignment": 20,
+    "Experience evidence quality": 15,
+    "Measurable accomplishment quality": 10,
+    "Preferred skill alignment": 10,
+    "Résumé clarity and structure": 10,
+    "Keyword and terminology alignment": 5,
+    "Education and certification alignment": 0.0
+  }
+}

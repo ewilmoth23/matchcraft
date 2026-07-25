@@ -1,0 +1,22 @@
+.git
+.github
+.venv
+**/__pycache__
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+**/node_modules
+**/dist
+**/test-results
+**/playwright-report
+**/.coverage*
+matchcraft-data
+.env
+.env.*
+
+# Not required to build or run either image. Excluded to keep the build context small;
+# neither Dockerfile COPYs these.
+docs
+eval
+sample_data
+*.md

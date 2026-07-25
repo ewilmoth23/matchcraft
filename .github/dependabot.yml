@@ -1,0 +1,41 @@
+# The CI dependency-audit job reports advisories but is advisory-only, so nothing opens a
+# pull request on its own. Dependabot does. Grouped updates keep the noise to one PR per
+# ecosystem per week rather than one per package.
+version: 2
+updates:
+  - package-ecosystem: pip
+    directory: /apps/api
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      python-dependencies:
+        patterns: ["*"]
+        update-types: [minor, patch]
+    labels: [dependencies, backend]
+
+  - package-ecosystem: npm
+    directory: /apps/web
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      frontend-dependencies:
+        patterns: ["*"]
+        update-types: [minor, patch]
+    labels: [dependencies, frontend]
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+    labels: [dependencies, ci]
+
+  # Both Dockerfiles pin base images by digest, which cannot be updated by hand safely.
+  - package-ecosystem: docker
+    directories:
+      - /apps/api
+      - /apps/web
+    schedule:
+      interval: monthly
+    labels: [dependencies, docker]
