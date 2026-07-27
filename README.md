@@ -1,6 +1,6 @@
 # MatchCraft
 
-[![CI](https://github.com/OWNER/matchcraft/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/matchcraft/actions/workflows/ci.yml)
+[![CI](https://github.com/ewilmoth23/matchcraft/actions/workflows/ci.yml/badge.svg)](https://github.com/ewilmoth23/matchcraft/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **Private, evidence-first résumé-to-role analysis.**
