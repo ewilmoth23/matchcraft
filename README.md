@@ -3,6 +3,22 @@
 [![CI](https://github.com/ewilmoth23/matchcraft/actions/workflows/ci.yml/badge.svg)](https://github.com/ewilmoth23/matchcraft/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
+
+## Project status
+
+> **Actively developed, pre-1.0.** This is a personal project built in the open, published so the
+> work can be read and run. It is not a supported product.
+
+Known gaps and caveats, stated up front:
+
+- Not yet exercised end-to-end outside development; expect rough edges on first run.
+- Scores are a transparent heuristic, not a prediction of interview or hiring outcomes.
+- Local, single-user, no authentication.
+
+Issues and pull requests are welcome. If something breaks on first run, that is
+useful information — please open an issue rather than assuming it works for
+everyone else.
+
 **Private, evidence-first résumé-to-role analysis.**
 
 MatchCraft is an open-source, single-user local application for comparing a résumé with a job description. It combines deterministic document analysis with optional local AI, shows exactly how its 0–100 alignment score is composed, and traces important findings to the supplied text.
