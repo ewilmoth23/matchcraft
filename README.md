@@ -21,6 +21,31 @@ everyone else.
 
 **Private, evidence-first résumé-to-role analysis.**
 
+## Screenshots
+
+Real captures from a local Docker run.
+
+![MatchCraft dashboard stating evidence-grounded, transparent scoring, and private-by-default](docs/images/matchcraft-dashboard.jpg)
+
+*Three claims made before you upload anything: every match points to a résumé
+excerpt, every gap is marked not found, and deterministic analysis works with AI
+disabled.*
+
+![Score composition showing eight categories as earned-over-available bars beside a 63/100 total](docs/images/matchcraft-score-composition.jpg)
+
+*The score is not a black box. Eight categories, each shown as earned over
+available, with the arithmetic exposed — `Required skill alignment 23.4 / 25`,
+"Evidence supported 3.8 of 4 detected item(s); only bare skills-list evidence
+receives reduced credit."*
+
+![Category detail showing Preferred skill alignment scored 0 of 10 with confirm-before-adding prompts](docs/images/matchcraft-category-detail.jpg)
+
+*Where it refuses to help you lie. Preferred skills scored **0 / 10** — Kubernetes
+and AWS appear in the job description but not the résumé, and rather than
+suggesting you add them, it emits "Confirm genuine experience before adding."
+Measurable accomplishments scored 3.3 / 10 because only 1 of 3 bullets carried a
+metric.*
+
 MatchCraft is an open-source, single-user local application for comparing a résumé with a job description. It combines deterministic document analysis with optional local AI, shows exactly how its 0–100 alignment score is composed, and traces important findings to the supplied text.
 
 MatchCraft does **not** predict interview or hiring outcomes. Missing résumé evidence is not proof that a candidate lacks a qualification.
